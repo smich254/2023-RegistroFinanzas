@@ -1,5 +1,7 @@
 import { createApp } from 'vue';
 import App from './App.vue';
+import { initializeApp } from "firebase/app";
+import firebaseConfig from "./firebaseConfig";
 
 const formatDate = {
     beforeMount: function (el, binding) {
@@ -9,6 +11,9 @@ const formatDate = {
         el.innerText = new Date(binding.value).toLocaleString();
     },
 };
+
+// Inicializa Firebase
+initializeApp(firebaseConfig);
 
 const app = createApp(App);
 app.directive('format-date', formatDate);

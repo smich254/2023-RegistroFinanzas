@@ -24,3 +24,7 @@ pnpm-debug.log*
 
 # Archivos de Venv Flask
 .venv
+
+# Credenciales Firebase
+/secrets
+credentials.js
